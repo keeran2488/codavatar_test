@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from telephony.models import (
+    VirtualPhoneNumber, 
+    CallLog
+)
+
+
+admin.site.register(VirtualPhoneNumber)
+admin.site.register(CallLog)
+
