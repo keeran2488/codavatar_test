@@ -16,9 +16,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
+    # third-party apps
     "rest_framework",
     "rest_framework_simplejwt",
 
+    # apps
     "account",
     "telephony",
 ]
