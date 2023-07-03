@@ -19,7 +19,7 @@ class VirtualPhoneNumberCreateListView(generics.ListCreateAPIView):
         """
         Filtering so that queryset contains phone number for a particular user (which is authenticated user) 
         """
-        return VirtualPhoneNumber.objects.filter(user=self.request.user)
+        return VirtualPhoneNumber.objects.filter(user=self.request.user).order_by('-created_at')
 
     def perform_create(self, serializer):
         """
