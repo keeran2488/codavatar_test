@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "1492b1f8-0cc9-451c-91fe-7ebdabcea621",
+		"name": "Telephony",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26755811"
+	},
+	"item": [
+		{
+			"name": "POST - Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mahi",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "@pple123",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "@pple123",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mahi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Mahi",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Goinjihar",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "Nepal",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/account/register/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mahi",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "@pple123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/account/token/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - List of virtual phone numbers for a user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg4NDQyMTk0LCJpYXQiOjE2ODg0NDE4OTQsImp0aSI6IjgyZjg4M2E3MmE1YzRjOGFhZTBjZDVlM2E0ODg2MDEzIiwidXNlcl9pZCI6NX0.BD5yJPxwYQUjBYfB8kIpnV5jwrDzKUjDFcnsxQUWh9M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/telephony/phonenumber/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"telephony",
+						"phonenumber",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Create a phone number for a user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg4NDQyMTk0LCJpYXQiOjE2ODg0NDE4OTQsImp0aSI6IjgyZjg4M2E3MmE1YzRjOGFhZTBjZDVlM2E0ODg2MDEzIiwidXNlcl9pZCI6NX0.BD5yJPxwYQUjBYfB8kIpnV5jwrDzKUjDFcnsxQUWh9M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_num",
+							"value": "+9779848235785",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "True",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/telephony/phonenumber/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"telephony",
+						"phonenumber",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
